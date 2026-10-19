@@ -16,6 +16,10 @@ _Avoid_: Cron job, daily run, loop
 A target the heartbeat operates on, such as the vault. Each workload has its own verifiers and budget.
 _Avoid_: Project, repo, target
 
+**Task**:
+A unit of work a heartbeat performs on a workload, such as inbox triage or article drafting. Each task has its own executor agent and its own verifier rubric.
+_Avoid_: Job, step, action
+
 **Planner**:
 The party that decides what a heartbeat does. It cannot change files.
 _Avoid_: Orchestrator, Janus
