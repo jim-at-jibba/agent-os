@@ -13,5 +13,6 @@ The source article builds its agentic OS as shell scripts, cron, and vendor CLIs
 - **Constitution checks** run outside Mastra so a dependency bump cannot silently disable them.
 - The **scheduler** is still launchd or cron; Mastra does not start itself.
 - The **planner** runs through the Codex CLI on the user's ChatGPT subscription, invoked as a workflow step that spawns the CLI, not as a Mastra model provider. Mastra's model routing therefore covers the executor and verifier only.
+- External parties sit behind one **adapter interface** per kind: spawned CLIs (Codex, Pi, Claude Code) and OpenAI-compatible endpoints (Hermes). Each task declares its adapter and model. A new harness is one adapter and no heartbeat change.
 - Hermes Agent, if adopted as executor, is reached through its OpenAI-compatible API server as an ordinary model endpoint.
 - The llm CLI verifier research is superseded for the verifier role; its model pricing and structured-output findings remain useful.
