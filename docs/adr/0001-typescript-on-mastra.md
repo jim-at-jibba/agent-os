@@ -12,5 +12,6 @@ The source article builds its agentic OS as shell scripts, cron, and vendor CLIs
 - **Permission separation** is enforced by giving the planner agent no write tools. A script proves this on every run, since the enforcement lives in code rather than the OS.
 - **Constitution checks** run outside Mastra so a dependency bump cannot silently disable them.
 - The **scheduler** is still launchd or cron; Mastra does not start itself.
+- The **planner** runs through the Codex CLI on the user's ChatGPT subscription, invoked as a workflow step that spawns the CLI, not as a Mastra model provider. Mastra's model routing therefore covers the executor and verifier only.
 - Hermes Agent, if adopted as executor, is reached through its OpenAI-compatible API server as an ordinary model endpoint.
 - The llm CLI verifier research is superseded for the verifier role; its model pricing and structured-output findings remain useful.
